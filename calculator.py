@@ -16,7 +16,20 @@ def calculateIndex():
     for score in scores:
         differentials.append(calculateDifferential(courseRating, courseSlope, score))
 
+    insertionSort(differentials)
 
+    topEight = [differentials[i] for i in range(8)]
+    
+    average = averageFunc(topEight)
+
+    index = average * .96
+
+    return index
+
+
+
+def averageFunc(arr):
+    return sum(arr) / len(arr)
 
 def insertionSort(arr):
     for i in range(len(arr)):
@@ -26,3 +39,5 @@ def insertionSort(arr):
             arr[j + 1] = arr[j]
             arr[j] = key
             j -= 1
+
+print(calculateIndex())
