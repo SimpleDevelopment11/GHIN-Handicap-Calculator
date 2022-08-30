@@ -18,11 +18,13 @@ def calculateIndex():
 
     insertionSort(differentials)
 
-    topEight = [differentials[i] for i in range(8)]
+    scoresToCount = 8
+
+    topEight = [differentials[i] for i in range(scoresToCount)]
     
     average = averageFunc(topEight)
 
-    index = average * .96
+    index = average
 
     return index
 
