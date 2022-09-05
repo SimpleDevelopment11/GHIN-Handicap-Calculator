@@ -1,7 +1,7 @@
-courseRating = 68
-courseSlope = 122
+courseRating = 69.4
+courseSlope = 125
 
-scores = [90, 88, 90, 95, 87, 82, 93, 90, 90, 92, 85, 80, 84, 81, 90, 89, 89, 85, 90, 89]
+scores = [91, 87, 93, 93, 97, 83, 86, 94, 90, 85, 87, 93, 96, 91, 91, 89, 81, 87, 89, 88]
 
 def calculateDifferential(rating, slope, score):
     return ((113/slope) * (score - rating))
