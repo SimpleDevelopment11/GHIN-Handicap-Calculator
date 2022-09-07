@@ -1,20 +1,17 @@
-courseRating = 69.4
-courseSlope = 125
-
-scores = [91, 87, 93, 93, 97, 83, 86, 94, 90, 85, 87, 93, 96, 91, 91, 89, 81, 87, 89, 88]
+postedScores = [{"rating": 69.4, "slope": 125, "scores": [86, 81, 89, 81, 88, 92, 83, 84, 87, 84, 86, 85, 88, 85, 86]}, {"rating": 70.0, "slope": 122, "scores": [86]}, {"rating": 68.2, "slope": 123, "scores": [85]}, {"rating": 70.9, "slope": 136, "scores": [85]}, {"rating": 69.4, "slope": 130, "scores": [86]}, {"rating": 69.0, "slope": 124, "scores": [82]}]
 
 def calculateDifferential(rating, slope, score):
     return ((113/slope) * (score - rating))
 
 def calculateIndex():
-    global courseRating
-    global courseSlope
-    global scores
-
+    global postedScores
     differentials = []
 
-    for score in scores:
-        differentials.append(calculateDifferential(courseRating, courseSlope, score))
+    for post in postedScores:
+        courseRating = post["rating"]
+        courseSlope = post["slope"]
+        for score in post["scores"]:
+            differentials.append(calculateDifferential(courseRating, courseSlope, score))
 
     insertionSort(differentials)
 
